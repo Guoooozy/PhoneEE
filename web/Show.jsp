@@ -22,11 +22,11 @@
     </tr>
     <c:forEach var="s" items="${list}" >
         <tr align="center">
-            <td>s.username</td>
-            <td>s.tel</td>
-            <td>s.add</td>
-            <td><a href="changePlan?plan_name=${s.plan_name}&type=change">更改</a></td>
-            <td><a href="changePlan?plan_name=${s.plan_name}&type=del">删除</a></td>
+            <td>${s.name}</td>
+            <td>${s.tel}</td>
+            <td>${s.add}</td>
+            <td><a href="">更改</a></td>
+            <td><a href="">删除</a></td>
         </tr>
     </c:forEach>
 </table>
