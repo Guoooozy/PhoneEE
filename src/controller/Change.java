@@ -24,7 +24,14 @@ public class Change extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
+        String tel = req.getParameter("tel");
+        String add = req.getParameter("add");
+        HttpSession session = req.getSession();
+        Persion persion = (Persion)session.getAttribute("object");
+        String username = persion.getUsername();
+        PersionIm persionIm = new PersionIm(name,tel,add,username);
         persionService.del(name);
-        resp.sendRedirect("Add.jsp");
+        persionService.add(persionIm);
+        req.getRequestDispatcher("Changer.jsp").forward(req,resp);
     }
 }
