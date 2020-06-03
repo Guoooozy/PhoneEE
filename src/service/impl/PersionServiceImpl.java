@@ -20,4 +20,9 @@ public class PersionServiceImpl implements PersionService {
     public void add(PersionIm persionIm) {
         persionRepository.add(persionIm);
     }
+
+    @Override
+    public void del(String name) {
+        persionRepository.del(name);
+    }
 }

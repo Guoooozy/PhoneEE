@@ -25,8 +25,8 @@
             <td>${s.name}</td>
             <td>${s.tel}</td>
             <td>${s.add}</td>
-            <td><a href="">更改</a></td>
-            <td><a href="">删除</a></td>
+            <td><a href="Change?name=${s.name}">更改</a></td>
+            <td><a href="Del?name=${s.name}">删除</a></td>
         </tr>
     </c:forEach>
 </table>

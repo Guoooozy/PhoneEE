@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-@WebFilter(urlPatterns = {"/Main.jsp","/Add.jsp","/Register.jsp","/Show.jsp"})
+@WebFilter(urlPatterns = {"/Main.jsp","/Add.jsp","/Show.jsp"})
 public class PersionFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

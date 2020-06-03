@@ -31,4 +31,22 @@ public class LoginRepositoryImpl implements LoginRepository {
         }
         return persion;
     }
+
+    @Override
+    public void Register(Persion persion) {
+        String sql = "insert into Persion (username,tel,add,password) values (?,?,?,?)";
+        Connection connection = new JDBC().getConn();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,persion.getUsername());
+            preparedStatement.setString(2,persion.getTel());
+            preparedStatement.setString(3,persion.getAdd());
+            preparedStatement.setString(4,persion.getPassword());
+            int i = preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -51,4 +51,19 @@ public class PersionRepostioryImpl implements PersionRepository {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void del(String name) {
+        String sql = "delete * from PersionIm where name = ?";
+        Connection connection = new JDBC().getConn();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,name);
+            int i = preparedStatement.executeUpdate();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
